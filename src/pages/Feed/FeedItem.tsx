@@ -1,5 +1,5 @@
 import React, { useCallback, useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, useHistory } from 'react-router-dom';
 import styled from 'styled-components';
 import ImageWithTag from '../../components/ImageWithTag';
 import Question from '../../components/Question';
@@ -30,11 +30,18 @@ const Title = styled.h1`
 
 const FeedItem = (props: Props) => {
   const { id } = useParams();
+  const history = useHistory();
   const [{ thumb, tag, title, questions }, setItem] = useState({});
 
   const getItemData = useCallback(() => {
-    setItem(items.find(item => item.id.toString() === id));
-  }, [id]);
+    const item = items.find(item => item.id.toString() === id);
+
+    if (!item) {
+      history.push('/item');
+    }
+
+    setItem(item);
+  }, [history, id]);
 
   useEffect(() => {
     getItemData();
