@@ -1,53 +1,53 @@
 export const TOPBAR_MENU = [
   {
     label: 'Culture',
-    href: '#'
+    href: '/'
   },
   {
     label: 'Work',
-    href: '#'
+    href: '/'
   },
   {
     label: 'Clients',
-    href: '#'
+    href: '/'
   },
   {
     label: 'Services',
-    href: '#'
+    href: '/'
   },
   {
     label: 'Careers',
-    href: '#'
+    href: '/'
   },
   {
     label: 'Contact',
-    href: '#'
+    href: '/'
   }
 ];
 
 export const FOOTER_MENU = [
   {
     label: 'Privacy',
-    href: '#'
+    href: '/'
   },
   {
     label: 'Sitemap',
-    href: '#'
+    href: '/'
   },
   {
     label: 'Facebook',
-    href: '#'
+    href: '/'
   },
   {
     label: 'LinkedIn',
-    href: '#'
+    href: '/'
   },
   {
     label: 'Instagram',
-    href: '#'
+    href: '/'
   },
   {
     label: 'Twitter',
-    href: '#'
+    href: '/'
   }
 ];
