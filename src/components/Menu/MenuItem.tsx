@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import uuidv4 from 'uuid/v4';
 import { ILinkProps } from '../../interfaces/Link';
@@ -9,7 +10,7 @@ const ItemContainer = styled.li`
   }
 `;
 
-const LinkItem = styled.a`
+const LinkItem = styled(Link)`
   color: black;
   text-decoration: none;
 `;
@@ -17,7 +18,7 @@ const LinkItem = styled.a`
 const MenuItem = ({ label, href }: ILinkProps) => {
   return (
     <ItemContainer key={uuidv4()}>
-      <LinkItem href={href}>{label}</LinkItem>
+      <LinkItem to={href}>{label}</LinkItem>
     </ItemContainer>
   );
 };
