@@ -7,18 +7,19 @@ interface Props {
 }
 
 const Container = styled.div`
-  margin-top: 30px;
+  margin-top: 45px;
 `;
 
 const HeaderText = styled.p`
-  font-size: 22px;
-  font-weight: 900;
-  margin-bottom: 7px;
+  font-size: 32px;
+  font-weight: 600;
+  margin-bottom: 12px;
 `;
 
 const BodyText = styled.p`
-  font-size: 16px;
-  line-height: 24px;
+  font-family: Georgia, serif;
+  font-size: 21px;
+  line-height: 37px;
 `;
 
 const Question = ({ number, text }: Props) => {

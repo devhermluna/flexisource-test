@@ -2,26 +2,27 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import ImageWithTag from '../ImageWithTag';
+import { IItem } from '../../interfaces/Item';
 
 interface Props {}
 
 const ItemWrapper = styled.div`
-  width: calc(50% - 10px);
-  margin-bottom: 40px;
+  width: 682px;
+  margin-bottom: 73px;
 `;
 
 const Title = styled.p`
-  margin: 20px 0 15px;
-  font-size: 20px;
-  font-weight: 900;
-  line-height: 26px;
+  margin: 27px 0 30px;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 32px;
 `;
 
 const StyledLink = styled(Link)`
   text-transform: uppercase;
   text-decoration: none;
-  font-size: 11px;
-  font-weight: 900;
+  font-size: 13px;
+  font-weight: 700;
   color: #3852f7;
   display: flex;
   align-items: center;
@@ -31,17 +32,17 @@ const StyledLink = styled(Link)`
     display: inline-block;
     background: #3852f7;
     height: 2px;
-    width: 25px;
-    margin-right: 10px;
+    width: 32px;
+    margin-right: 16px;
   }
 `;
 
-const ItemComponent = ({ id, thumb, tag, title_long }: Props) => {
+const ItemComponent = ({ id, slug, thumb, tag, title_long }: IItem) => {
   return (
     <ItemWrapper>
       <ImageWithTag imageUrl={thumb} tag={tag} />
       <Title>{title_long}</Title>
-      <StyledLink to={`/item/${id}`}>View Case Study</StyledLink>
+      <StyledLink to={`/item/${id}-${slug}`}>View Case Study</StyledLink>
     </ItemWrapper>
   );
 };

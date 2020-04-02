@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { BACKGROUND, TAG_COLOR } from '../constants/Colors';
 
 interface Props {
   imageUrl: string;
@@ -23,10 +24,11 @@ const Tag = styled.div`
   transform: rotate(-90deg) translate(-100%, 0);
   transform-origin: left top;
   top: 0;
-  background: #f5f5f5;
-  padding-left: 10px;
+  background: ${BACKGROUND};
+  color: ${TAG_COLOR};
+  padding-left: 16px;
   padding-bottom: 5px;
-  font-size: 12px;
+  font-size: 11px;
   text-transform: uppercase;
 `;
 
@@ -40,7 +42,7 @@ const ImageWithTag = ({ imageUrl, tag, height }: Props) => {
 };
 
 ImageWithTag.defaultProps = {
-  height: 280
+  height: 384
 };
 
 export default ImageWithTag;

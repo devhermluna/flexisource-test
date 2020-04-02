@@ -6,11 +6,12 @@ import { ILinkProps } from '../../interfaces/Link';
 
 const ItemContainer = styled.li`
   &:not(:first-of-type) {
-    margin-left: 30px;
+    margin-left: 36px;
   }
 `;
 
 const LinkItem = styled(Link)`
+  font-size: 13px;
   color: black;
   text-decoration: none;
 `;

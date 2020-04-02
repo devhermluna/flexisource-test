@@ -5,21 +5,28 @@ import {
   Redirect,
   Route
 } from 'react-router-dom';
-import styled from 'styled-components';
+import styled, { createGlobalStyle } from 'styled-components';
 import FeedList from './Feed/FeedList';
 import FeedItem from './Feed/FeedItem';
 import MenuContainer from '../components/Menu/MenuContainer';
 import { TOPBAR_MENU, FOOTER_MENU } from '../constants/Menu';
 import { ITEMS_ROUTE, ITEM_ROUTE } from '../constants/Routes';
+import { BACKGROUND } from '../constants/Colors';
+
+const BaseStyle = createGlobalStyle`
+  body {
+    background: ${BACKGROUND};
+  }
+`;
 
 const AppContainer = styled.div`
-  padding: 30px 80px;
-  max-width: 1260px;
+  padding: 30px;
+  max-width: 1460px;
   margin: 0 auto;
 `;
 
 const TopbarMenu = styled.div`
-  margin-bottom: 30px;
+  margin-bottom: 60px;
 `;
 
 const FooterMenu = styled.div`
@@ -31,9 +38,10 @@ const FooterMenu = styled.div`
 function App() {
   return (
     <Router>
+      <BaseStyle />
       <AppContainer>
         <TopbarMenu>
-          <MenuContainer items={TOPBAR_MENU} logoHeight={24} />
+          <MenuContainer items={TOPBAR_MENU} logoHeight={17} />
         </TopbarMenu>
         <Switch>
           <Route path={ITEM_ROUTE}>
@@ -45,7 +53,7 @@ function App() {
           <Redirect to={ITEMS_ROUTE} />
         </Switch>
         <FooterMenu>
-          <MenuContainer items={FOOTER_MENU} logoHeight={18} />
+          <MenuContainer items={FOOTER_MENU} logoHeight={14} />
         </FooterMenu>
       </AppContainer>
     </Router>

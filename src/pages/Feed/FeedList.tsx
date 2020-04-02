@@ -1,7 +1,8 @@
-import React from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import styled from 'styled-components';
-import Item from '../../components/Item/Item';
-import items from '../../data.json';
+import FeedItem from '../../components/FeedItem/FeedItem';
+import FeedItemLoader from '../../components/FeedItem/FeedItemLoader';
+import FeedAPI from '../../services/feed';
 
 interface Props {}
 
@@ -12,11 +13,32 @@ const ItemContainer = styled.div`
 `;
 
 const Feed = (props: Props) => {
+  const [items, setItems] = useState([]);
+  const [isFetching, setIsFetching] = useState<boolean>(true);
+
+  const getItems = useCallback(async () => {
+    try {
+      const response = await FeedAPI.browse();
+
+      setItems(response);
+    } catch (error) {
+      console.log('error', error);
+    } finally {
+      setIsFetching(false);
+    }
+  }, []);
+
+  useEffect(() => {
+    getItems();
+  }, [getItems]);
+
   return (
     <ItemContainer>
       {items.map(item => (
-        <Item key={item.id} {...item} />
+        <FeedItem key={item.id} {...item} />
       ))}
+      {isFetching &&
+        [0, 1, 2, 3].map((item: number) => <FeedItemLoader key={item} />)}
     </ItemContainer>
   );
 };
