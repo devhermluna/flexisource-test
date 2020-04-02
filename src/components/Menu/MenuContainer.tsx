@@ -3,8 +3,9 @@ import styled from 'styled-components';
 import Logo from '../Logo';
 import Menu from './Menu';
 import { DEVICES } from '../../constants/Devices';
+import { IMenuContainer } from '../../interfaces/Menu';
 
-const Topbar = styled.div`
+const MenuWrapper = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -15,15 +16,13 @@ const Topbar = styled.div`
   }
 `;
 
-interface Props {}
-
-const TopbarComponent = ({ items, logoHeight }: Props) => {
+const MenuContainer = ({ items, logoHeight }: IMenuContainer) => {
   return (
-    <Topbar>
+    <MenuWrapper data-testid="menu-container">
       <Logo height={logoHeight} />
       <Menu items={items} />
-    </Topbar>
+    </MenuWrapper>
   );
 };
 
-export default TopbarComponent;
+export default MenuContainer;

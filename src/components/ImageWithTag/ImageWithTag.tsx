@@ -2,12 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { BACKGROUND, TAG_COLOR } from '../../constants/Colors';
 import { DEVICES } from '../../constants/Devices';
-
-interface Props {
-  imageUrl: string;
-  tag: string;
-  height?: number;
-}
+import { IImageWithTag } from '../../interfaces/ImageWithTag';
 
 const Container = styled.div`
   position: relative;
@@ -37,9 +32,11 @@ const Tag = styled.div`
   text-transform: uppercase;
 `;
 
-const ImageWithTag = ({ imageUrl, tag, height }: Props) => {
+const ImageWithTag = ({ imageUrl, tag, height }: IImageWithTag) => {
+  if (!imageUrl || !tag) return null;
+
   return (
-    <Container>
+    <Container data-testid="image-with-tag-container">
       <Image height={height} image={imageUrl} />
       <Tag>{tag}</Tag>
     </Container>

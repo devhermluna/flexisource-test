@@ -1,10 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-
-interface Props {
-  number: number;
-  text: string;
-}
+import { IQuestion } from '../../interfaces/Question';
 
 const Container = styled.div`
   margin-top: 45px;
@@ -22,7 +18,9 @@ const BodyText = styled.p`
   line-height: 37px;
 `;
 
-const Question = ({ number, text }: Props) => {
+const Question = ({ number, text }: IQuestion) => {
+  if (!number || !text) return null;
+
   return (
     <Container data-testid="question-container">
       <HeaderText data-testid="question-header-text">

@@ -18,7 +18,7 @@ const MenuContainer = styled.ul`
 
 const Menu = ({ items }: IMenuProps) => {
   return (
-    <MenuContainer>
+    <MenuContainer data-testid="menu-item-container">
       {items.map(item => (
         <MenuItem key={uuidv4()} {...item} />
       ))}

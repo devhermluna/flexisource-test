@@ -1,12 +1,8 @@
 import React from 'react';
 import { ReactComponent as ImgLogo } from '../assets/images/adrenalin.svg';
+import { ILogo } from '../interfaces/Logo';
 
-interface Props {
-  height?: number | string;
-  width?: number | string;
-}
-
-const Logo = ({ height, width, color }: Props) => {
+const Logo = ({ height, width, color }: ILogo) => {
   return (
     <ImgLogo
       style={{

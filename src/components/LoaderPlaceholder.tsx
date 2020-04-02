@@ -1,11 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { LOADER_COLOR } from '../constants/Colors';
-
-interface Props {
-  height: number;
-  width?: number | string;
-}
+import { ILoader } from '../interfaces/Loader';
 
 const Loader = styled.div`
   background: ${LOADER_COLOR};
@@ -14,7 +10,7 @@ const Loader = styled.div`
   max-width: ${props => props.width}px;
 `;
 
-const LoaderPlaceholder = ({ height, width }: Props) => {
+const LoaderPlaceholder = ({ height, width }: ILoader) => {
   return <Loader height={height} width={width} />;
 };
 

@@ -1,4 +1,6 @@
-export const TOPBAR_MENU = [
+import { ILinkProps } from './../interfaces/Link';
+
+export const TOPBAR_MENU: ILinkProps[] = [
   {
     label: 'Culture',
     href: '/'
@@ -25,7 +27,7 @@ export const TOPBAR_MENU = [
   }
 ];
 
-export const FOOTER_MENU = [
+export const FOOTER_MENU: ILinkProps[] = [
   {
     label: 'Privacy',
     href: '/'

@@ -41,6 +41,8 @@ const StyledLink = styled(Link)`
 `;
 
 const ItemComponent = ({ id, slug, thumb, tag, title_long }: IItem) => {
+  if (!id || !slug || !thumb || !tag || !title_long) return null;
+
   return (
     <ItemWrapper data-testid="feed-list-item">
       <ImageWithTag imageUrl={thumb} tag={tag} />

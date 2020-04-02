@@ -24,8 +24,10 @@ const LinkItem = styled(Link)`
 `;
 
 const MenuItem = ({ label, href }: ILinkProps) => {
+  if (!href || !label) return null;
+
   return (
-    <ItemContainer key={uuidv4()}>
+    <ItemContainer key={uuidv4()} data-testid="menu-item-link-container">
       <LinkItem to={href}>{label}</LinkItem>
     </ItemContainer>
   );
