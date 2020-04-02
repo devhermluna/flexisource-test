@@ -1,10 +1,17 @@
 import styled, { css, createGlobalStyle } from 'styled-components';
 import { LOADER_COLOR, BACKGROUND } from '../constants/Colors';
+import { MAIN_FONT } from '../constants/Fonts'
 import { DEVICES } from '../constants/Devices';
+
+interface StyledLoaderProps {
+  height?: number;
+  width?: number;
+}
 
 export const BaseStyledGlobal = createGlobalStyle`
   body {
     background: ${BACKGROUND};
+    font-family: ${MAIN_FONT};
   }
 `;
 
@@ -42,6 +49,6 @@ export const BaseStyledFlexCenterHorizontally = css`
 export const StyledLoader = styled.div`
   background: ${LOADER_COLOR};
   border-radius: 5px;
-  height: ${props => props.height}px;
-  max-width: ${props => props.width}px;
+  height: ${(props: StyledLoaderProps) => props.height}px;
+  max-width: ${(props: StyledLoaderProps) => props.width}px;
 `;

@@ -2,13 +2,18 @@ import styled from 'styled-components';
 import { BACKGROUND, TAG_COLOR } from '../constants/Colors';
 import { DEVICES } from '../constants/Devices';
 
+interface StyledImageProps {
+  height?: number;
+  image?: string;
+}
+
 export const StyledContainer = styled.div`
   position: relative;
 `;
 
 export const StyledImage = styled.div`
-  height: ${props => props.height}px;
-  background-image: url(/images/${props => props.image});
+  height: ${(props: StyledImageProps) => props.height}px;
+  background-image: url(/images/${(props: StyledImageProps) => props.image});
   background-size: cover;
   background-position: center;
 

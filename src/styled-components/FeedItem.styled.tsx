@@ -64,7 +64,7 @@ export const StyledFeedItemDetailsContainer = styled.div`
 
 export const StyledFeedItemTitle = styled.h1`
   font-size: 64px;
-  font-weight: 900;
+  font-weight: 700;
   line-height: 68px;
   margin-bottom: 60px;
 `;

@@ -1,4 +1,4 @@
-export const MAIN_FONT: string = 'Arial, sans-serif';
+export const MAIN_FONT: string = 'Arial, Helvetica, sans-serif';
 export const SECONDARY_FONT: string = 'Georgia, serif';
 
 export default {
