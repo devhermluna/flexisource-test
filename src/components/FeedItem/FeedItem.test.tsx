@@ -3,7 +3,7 @@ import '@testing-library/jest-dom/extend-expect';
 import { MemoryRouter } from 'react-router-dom';
 import { render, cleanup } from '@testing-library/react';
 import FeedItem from './FeedItem';
-import { feedItems } from '../../__mocks__/request';
+import { feedItems } from '../../__mocks__/MockFeedItemApi';
 
 afterEach(cleanup);
 
