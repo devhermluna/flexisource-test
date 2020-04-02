@@ -8,23 +8,38 @@ import QuestionLoader from '../../components/QuestionLoader';
 import FeedAPI from '../../services/feed';
 import { IITem } from '../../interfaces/Item';
 import { LOADER_COLOR } from '../../constants/Colors';
+import { DEVICES } from '../../constants/Devices';
 
-const CONTAINER_WIDTH = '682px';
+const CONTAINER_WIDTH = 'calc(50% - 15px)';
 const IMAGE_HEIGHT = 1107;
 
 const ItemContainer = styled.div`
   display: flex;
   justify-content: space-between;
   margin-bottom: 50px;
+
+  @media ${DEVICES.laptop} {
+    flex-wrap: wrap;
+  }
 `;
 
 const ImageContainer = styled.div`
   width: ${CONTAINER_WIDTH};
+
+  @media ${DEVICES.laptop} {
+    width: 100%;
+  }
 `;
 
 const DetailsContainer = styled.div`
   width: ${CONTAINER_WIDTH};
   padding: 80px;
+
+  @media ${DEVICES.laptop} {
+    width: 100%;
+    padding: 0;
+    margin-top: 50px;
+  }
 `;
 
 const Title = styled.h1`

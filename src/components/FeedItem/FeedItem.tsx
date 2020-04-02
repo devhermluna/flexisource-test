@@ -3,12 +3,15 @@ import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import ImageWithTag from '../ImageWithTag';
 import { IItem } from '../../interfaces/Item';
-
-interface Props {}
+import { DEVICES } from '../../constants/Devices';
 
 const ItemWrapper = styled.div`
-  width: 682px;
+  width: calc(50% - 15px);
   margin-bottom: 73px;
+
+  @media ${DEVICES.laptop} {
+    width: 100%;
+  }
 `;
 
 const Title = styled.p`

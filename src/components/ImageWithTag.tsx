@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { BACKGROUND, TAG_COLOR } from '../constants/Colors';
+import { DEVICES } from '../constants/Devices';
 
 interface Props {
   imageUrl: string;
@@ -17,6 +18,10 @@ const Image = styled.div`
   background-image: url(/images/${props => props.image});
   background-size: cover;
   background-position: center;
+
+  @media ${DEVICES.laptop} {
+    height: 384px;
+  }
 `;
 
 const Tag = styled.div`
