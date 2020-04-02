@@ -16,7 +16,7 @@ const Title = styled.div`
 
 const ItemComponent = () => {
   return (
-    <ItemWrapper>
+    <ItemWrapper data-testid="feed-list-item">
       <ImageWithTagLoader height={384} />
       <Title>
         <LoaderPlaceholder height={32} width={300} />

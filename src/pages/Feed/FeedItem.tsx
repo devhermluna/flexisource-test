@@ -70,13 +70,13 @@ const FeedItem = () => {
   }, [getItemData]);
 
   return (
-    <ItemContainer>
+    <ItemContainer data-testid="feed-detailed-item">
       {!isFetching && (
         <>
           <ImageContainer>
             <ImageWithTag imageUrl={thumb} tag={tag} height={IMAGE_HEIGHT} />
           </ImageContainer>
-          <DetailsContainer>
+          <DetailsContainer data-testid="item-details-container">
             <Title>{title}</Title>
             {questions &&
               questions.map((question, index) => (
@@ -90,10 +90,10 @@ const FeedItem = () => {
           <ImageContainer>
             <ImageWithTagLoader height={IMAGE_HEIGHT} />
           </ImageContainer>
-          <DetailsContainer>
+          <DetailsContainer data-testid="item-details-container">
             <TitleLoader />
             {[0, 1, 2, 3].map((item: number) => (
-              <QuestionLoader />
+              <QuestionLoader key={item} />
             ))}
           </DetailsContainer>
         </>

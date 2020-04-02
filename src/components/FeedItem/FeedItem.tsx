@@ -39,7 +39,7 @@ const StyledLink = styled(Link)`
 
 const ItemComponent = ({ id, slug, thumb, tag, title_long }: IItem) => {
   return (
-    <ItemWrapper>
+    <ItemWrapper data-testid="feed-list-item">
       <ImageWithTag imageUrl={thumb} tag={tag} />
       <Title>{title_long}</Title>
       <StyledLink to={`/item/${id}-${slug}`}>View Case Study</StyledLink>

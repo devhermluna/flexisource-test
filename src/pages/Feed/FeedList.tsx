@@ -33,7 +33,7 @@ const Feed = (props: Props) => {
   }, [getItems]);
 
   return (
-    <ItemContainer>
+    <ItemContainer data-testid="feedlist-container">
       {items.map(item => (
         <FeedItem key={item.id} {...item} />
       ))}

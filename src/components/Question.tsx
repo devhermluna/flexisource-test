@@ -24,9 +24,11 @@ const BodyText = styled.p`
 
 const Question = ({ number, text }: Props) => {
   return (
-    <Container>
-      <HeaderText>Question {number}</HeaderText>
-      <BodyText>{text}</BodyText>
+    <Container data-testid="question-container">
+      <HeaderText data-testid="question-header-text">
+        Question {number}
+      </HeaderText>
+      <BodyText data-testid="question-body-text">{text}</BodyText>
     </Container>
   );
 };

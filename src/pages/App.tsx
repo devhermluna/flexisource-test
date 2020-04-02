@@ -39,8 +39,8 @@ function App() {
   return (
     <Router>
       <BaseStyle />
-      <AppContainer>
-        <TopbarMenu>
+      <AppContainer data-testid="app-container">
+        <TopbarMenu data-testid="topbar">
           <MenuContainer items={TOPBAR_MENU} logoHeight={17} />
         </TopbarMenu>
         <Switch>
@@ -52,7 +52,7 @@ function App() {
           </Route>
           <Redirect to={ITEMS_ROUTE} />
         </Switch>
-        <FooterMenu>
+        <FooterMenu data-testid="footer">
           <MenuContainer items={FOOTER_MENU} logoHeight={14} />
         </FooterMenu>
       </AppContainer>
