@@ -1,7 +1,7 @@
-import helper from './helper';
+import client from './client';
 
 const resource: string = 'feed';
 
 export default {
-  ...helper(resource)
+  ...client(resource)
 };

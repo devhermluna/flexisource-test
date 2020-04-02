@@ -1,55 +1,33 @@
 import { ILinkProps } from './../interfaces/Link';
 
-export const TOPBAR_MENU: ILinkProps[] = [
-  {
-    label: 'Culture',
-    href: '/'
-  },
-  {
-    label: 'Work',
-    href: '/'
-  },
-  {
-    label: 'Clients',
-    href: '/'
-  },
-  {
-    label: 'Services',
-    href: '/'
-  },
-  {
-    label: 'Careers',
-    href: '/'
-  },
-  {
-    label: 'Contact',
-    href: '/'
-  }
-];
+const linkBuilder = (...labels: string[]): ILinkProps[] => {
+  return labels.reduce(
+    (accumulator: ILinkProps[], currentValue: string): ILinkProps[] => {
+      return [
+        ...accumulator,
+        {
+          label: currentValue,
+          href: '/'
+        }
+      ];
+    },
+    []
+  );
+};
 
-export const FOOTER_MENU: ILinkProps[] = [
-  {
-    label: 'Privacy',
-    href: '/'
-  },
-  {
-    label: 'Sitemap',
-    href: '/'
-  },
-  {
-    label: 'Facebook',
-    href: '/'
-  },
-  {
-    label: 'LinkedIn',
-    href: '/'
-  },
-  {
-    label: 'Instagram',
-    href: '/'
-  },
-  {
-    label: 'Twitter',
-    href: '/'
-  }
-];
+export const TOPBAR_MENU: ILinkProps[] = linkBuilder(
+  'Culture',
+  'Work',
+  'Clients',
+  'Services',
+  'Careers',
+  'Contact'
+);
+export const FOOTER_MENU: ILinkProps[] = linkBuilder(
+  'Privacy',
+  'Sitemap',
+  'Facebook',
+  'LinkedIn',
+  'Instagram',
+  'Twitter'
+);

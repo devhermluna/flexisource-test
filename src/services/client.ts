@@ -1,8 +1,8 @@
 import qs from 'query-string';
 import instance from './index';
-import { IServicesHelper } from '../interfaces/Services';
+import { IApiRepository } from '../interfaces/Services';
 
-export default (resource: string = ''): IServicesHelper => ({
+export default (resource: string = ''): IApiRepository => ({
   browse: (params: any = {}): Promise<any> =>
     instance.get(`${resource}.json?${qs.stringify(params)}`),
   read: (id: number): Promise<any> => instance.get(`${resource}/${id}`),

@@ -1,61 +1,20 @@
 import React, { useCallback, useEffect, useState } from 'react';
 import { useParams, useHistory } from 'react-router-dom';
-import styled from 'styled-components';
 import ImageWithTag from '../../components/ImageWithTag/ImageWithTag';
 import ImageWithTagLoader from '../../components/ImageWithTag/ImageWithTagLoader';
 import Question from '../../components/Question/Question';
 import QuestionLoader from '../../components/Question/QuestionLoader';
 import FeedAPI from '../../services/feed';
 import { IITem } from '../../interfaces/Item';
-import { LOADER_COLOR } from '../../constants/Colors';
-import { DEVICES } from '../../constants/Devices';
+import {
+  StyledFeedItemContainer,
+  StyledFeedItemImageContainer,
+  StyledFeedItemDetailsContainer,
+  StyledFeedItemTitle,
+  StyledFeedItemTitleLoader
+} from '../../styled-components/FeedItem.styled';
 
-const CONTAINER_WIDTH = 'calc(50% - 15px)';
 const IMAGE_HEIGHT = 1107;
-
-const ItemContainer = styled.div`
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 50px;
-
-  @media ${DEVICES.laptop} {
-    flex-wrap: wrap;
-  }
-`;
-
-const ImageContainer = styled.div`
-  width: ${CONTAINER_WIDTH};
-
-  @media ${DEVICES.laptop} {
-    width: 100%;
-  }
-`;
-
-const DetailsContainer = styled.div`
-  width: ${CONTAINER_WIDTH};
-  padding: 80px;
-
-  @media ${DEVICES.laptop} {
-    width: 100%;
-    padding: 0;
-    margin-top: 50px;
-  }
-`;
-
-const Title = styled.h1`
-  font-size: 64px;
-  font-weight: 900;
-  line-height: 68px;
-  margin-bottom: 60px;
-`;
-
-const TitleLoader = styled.div`
-  height: 68px;
-  width: 150px
-  margin-bottom: 60px;
-  background: ${LOADER_COLOR};
-  border-radius: 5px;
-`;
 
 const FeedItem = () => {
   const { slug } = useParams();
@@ -85,35 +44,35 @@ const FeedItem = () => {
   }, [getItemData]);
 
   return (
-    <ItemContainer data-testid="feed-detailed-item">
+    <StyledFeedItemContainer data-testid="feed-detailed-item">
       {!isFetching && (
         <>
-          <ImageContainer>
+          <StyledFeedItemImageContainer>
             <ImageWithTag imageUrl={thumb} tag={tag} height={IMAGE_HEIGHT} />
-          </ImageContainer>
-          <DetailsContainer data-testid="item-details-container">
-            <Title>{title}</Title>
+          </StyledFeedItemImageContainer>
+          <StyledFeedItemDetailsContainer data-testid="item-details-container">
+            <StyledFeedItemTitle>{title}</StyledFeedItemTitle>
             {questions &&
               questions.map((question, index) => (
                 <Question key={question} number={index + 1} text={question} />
               ))}
-          </DetailsContainer>
+          </StyledFeedItemDetailsContainer>
         </>
       )}
       {isFetching && (
         <>
-          <ImageContainer>
+          <StyledFeedItemImageContainer>
             <ImageWithTagLoader height={IMAGE_HEIGHT} />
-          </ImageContainer>
-          <DetailsContainer data-testid="item-details-container">
-            <TitleLoader />
+          </StyledFeedItemImageContainer>
+          <StyledFeedItemDetailsContainer data-testid="item-details-container">
+            <StyledFeedItemTitleLoader />
             {[0, 1, 2, 3].map((item: number) => (
               <QuestionLoader key={item} />
             ))}
-          </DetailsContainer>
+          </StyledFeedItemDetailsContainer>
         </>
       )}
-    </ItemContainer>
+    </StyledFeedItemContainer>
   );
 };
 

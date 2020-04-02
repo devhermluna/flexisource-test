@@ -5,40 +5,22 @@ import {
   Redirect,
   Route
 } from 'react-router-dom';
-import styled, { createGlobalStyle } from 'styled-components';
 import FeedList from './Feed/FeedList';
 import FeedItem from './Feed/FeedItem';
 import MenuContainer from '../components/Menu/MenuContainer';
 import { TOPBAR_MENU, FOOTER_MENU } from '../constants/Menu';
 import { ITEMS_ROUTE, ITEM_ROUTE } from '../constants/Routes';
-import { BACKGROUND } from '../constants/Colors';
-
-const BaseStyle = createGlobalStyle`
-  body {
-    background: ${BACKGROUND};
-  }
-`;
-
-const AppContainer = styled.div`
-  padding: 30px;
-  max-width: 1460px;
-  margin: 0 auto;
-`;
-
-const TopbarMenu = styled.div`
-  margin-bottom: 60px;
-`;
-
-const FooterMenu = styled.div`
-  border-top: 1px solid black;
-  padding-top: 20px;
-  margin-top: 30px;
-`;
+import { BaseStyledGlobal } from '../styled-components/base.styled';
+import {
+  AppContainer,
+  TopbarMenu,
+  FooterMenu
+} from '../styled-components/App.styled';
 
 function App() {
   return (
     <Router>
-      <BaseStyle />
+      <BaseStyledGlobal />
       <AppContainer data-testid="app-container">
         <TopbarMenu data-testid="topbar">
           <MenuContainer items={TOPBAR_MENU} logoHeight={17} />

@@ -1,24 +1,18 @@
 import React from 'react';
-import styled from 'styled-components';
 import LoaderPlaceholder from '../LoaderPlaceholder';
-
-const Container = styled.div`
-  margin-top: 45px;
-`;
-
-const HeaderText = styled.div`
-  margin-bottom: 12px;
-  border-radius: 5px;
-`;
+import {
+  StyledContainer,
+  StyledHeaderText
+} from '../../styled-components/Question.styled';
 
 const Question = () => {
   return (
-    <Container>
-      <HeaderText>
+    <StyledContainer>
+      <StyledHeaderText>
         <LoaderPlaceholder height={32} width={150} />
-      </HeaderText>
+      </StyledHeaderText>
       <LoaderPlaceholder height={110} />
-    </Container>
+    </StyledContainer>
   );
 };
 
