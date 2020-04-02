@@ -1,4 +1,5 @@
 import React from 'react';
+import '@testing-library/jest-dom/extend-expect';
 import { render, cleanup } from '@testing-library/react';
 import { within } from '@testing-library/dom';
 import FeedList from './FeedList';

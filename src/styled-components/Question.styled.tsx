@@ -4,7 +4,7 @@ export const StyledContainer = styled.div`
   margin-top: 45px;
 `;
 
-export const StyledHeaderText = styled.p`
+export const StyledHeaderText = styled.div`
   font-size: 32px;
   font-weight: 600;
   margin-bottom: 12px;

@@ -1,4 +1,4 @@
 export interface ILinkProps {
-  label: string;
-  href: string;
+  label?: string;
+  href?: string;
 }
