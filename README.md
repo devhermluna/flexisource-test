@@ -14,31 +14,24 @@ You will also see any lint errors in the console.
 
 ### `npm test`
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Launches the test runner in the interactive watch mode.
 
-### `npm run build`
+## Plugin Used
+- axios - in most of the projects I created. I used axios except on Angular since they have their own http client module.
+- axios-mock-adapter - for easier mocking of api requests
+- lodash - used some of the handful methods
+- react-router-dom - routing for react
+- query-string - easier to parse or stringify url query string
+- styled-components - styling. I prefer styled-components over sass/scss because it is easier to track if the component doesn't have the proper style attribute and it avoids style collision when creating or updating styles.
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Features
+- Routing - pretty url `{{id}}-{{slug}}` = 1001-sample-url-slug
+- Mobile Responsive - use the developer tools for accurate testing of other breakpoints
+- Preloader (not circular loader) - standard when creating an app
+- Tests - component testing to important components (Jest + react-testing-library). I also know how to use enzyme but rtl is much easier to use 
+- Typescript - superset javascript
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Techniques
+- CSS Flexbox - used by most of the ui library. I didn't use any UI library since the test project isn't big enough. But I usually use grid system of bootstrap because it has good implementation for styled-components. Also, flexbox is very easy to manipulate for creating mobile responsive design. `flex-wrap: wrap` played a key role here.
+- Photoshop - used to get the actual sizes. However, using the pixels from photoshop isn't accurate because of the line-height provided by the browser. So, I just tried to make it similar as much as I can
+- Atomic Web Design Methodology - It is widely used nowadays because it is easier to use and avoid duplication of code inside component. However, there's not too much for this project and it's missing the layout. 
