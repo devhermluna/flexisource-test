@@ -1,10 +1,10 @@
 import React, { useCallback, useEffect, useState } from 'react';
 import { useParams, useHistory } from 'react-router-dom';
 import styled from 'styled-components';
-import ImageWithTag from '../../components/ImageWithTag';
-import ImageWithTagLoader from '../../components/ImageWithTagLoader';
-import Question from '../../components/Question';
-import QuestionLoader from '../../components/QuestionLoader';
+import ImageWithTag from '../../components/ImageWithTag/ImageWithTag';
+import ImageWithTagLoader from '../../components/ImageWithTag/ImageWithTagLoader';
+import Question from '../../components/Question/Question';
+import QuestionLoader from '../../components/Question/QuestionLoader';
 import FeedAPI from '../../services/feed';
 import { IITem } from '../../interfaces/Item';
 import { LOADER_COLOR } from '../../constants/Colors';

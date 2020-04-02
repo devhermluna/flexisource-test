@@ -1,5 +1,5 @@
 import React from 'react';
-import LoaderPlaceholder from './LoaderPlaceholder';
+import LoaderPlaceholder from '../LoaderPlaceholder';
 
 interface Props {
   height: number;

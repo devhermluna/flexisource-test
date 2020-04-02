@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
-import { BACKGROUND, TAG_COLOR } from '../constants/Colors';
-import { DEVICES } from '../constants/Devices';
+import { BACKGROUND, TAG_COLOR } from '../../constants/Colors';
+import { DEVICES } from '../../constants/Devices';
 
 interface Props {
   imageUrl: string;

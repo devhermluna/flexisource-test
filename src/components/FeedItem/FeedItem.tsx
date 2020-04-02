@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
-import ImageWithTag from '../ImageWithTag';
+import ImageWithTag from '../ImageWithTag/ImageWithTag';
 import { IItem } from '../../interfaces/Item';
 import { DEVICES } from '../../constants/Devices';
 

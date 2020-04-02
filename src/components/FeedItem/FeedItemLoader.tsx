@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import ImageWithTagLoader from '../ImageWithTagLoader';
+import ImageWithTagLoader from '../ImageWithTag/ImageWithTagLoader';
 import LoaderPlaceholder from '../LoaderPlaceholder';
 import { DEVICES } from '../../constants/Devices';
 

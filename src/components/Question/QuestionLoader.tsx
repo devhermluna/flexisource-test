@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import LoaderPlaceholder from './LoaderPlaceholder';
+import LoaderPlaceholder from '../LoaderPlaceholder';
 
 const Container = styled.div`
   margin-top: 45px;

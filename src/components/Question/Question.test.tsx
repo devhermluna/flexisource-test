@@ -1,7 +1,7 @@
 import React from 'react';
 import { render, cleanup } from '@testing-library/react';
 import { within } from '@testing-library/dom';
-import Question from './Question';
+import Question from './Question/Question';
 
 afterEach(cleanup);
 
